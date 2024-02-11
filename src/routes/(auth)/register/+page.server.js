@@ -1,6 +1,7 @@
 import { credential } from "$db/collection/credential";
 import { user } from "$db/collection/user";
 import { fail, redirect } from "@sveltejs/kit";
+import bcrypt from "bcrypt";
 
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ locals }) => {
@@ -59,7 +60,7 @@ export const actions = {
 
     const credentials = await credential.insertOne({
       username: username,
-      password: password,
+      password: await bcrypt.hash(password, 10),
       role: "user",
       userId: users.insertedId.toString(),
     });

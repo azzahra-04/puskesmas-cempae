@@ -3,6 +3,7 @@ import { adminPuskesmas } from "$db/collection/adminPuskesmas";
 import { fail, redirect } from "@sveltejs/kit";
 import { POCKETBASE_URL } from "$env/static/private";
 import { pb, getAuthToken } from "$lib/server/pocketbase";
+import bcrypt from "bcrypt";
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -58,7 +59,7 @@ export const actions = {
 
     const credentials = await credential.insertOne({
       username: username,
-      password: password,
+      password: await bcrypt.hash(password, 10),
       role: "admin-pkm",
       userId: adminsPuskesmas.insertedId.toString(),
     });
