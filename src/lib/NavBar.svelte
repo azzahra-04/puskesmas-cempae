@@ -120,7 +120,7 @@
 
 <!-- start: Sidebar -->
 <div
-  class="fixed left-0 top-0 w-full h-full bg-white p-4 z-50 sidebar-menu transition-transform lg:hidden"
+  class="fixed w-full h-full overflow-y-auto bg-white p-4 z-50 sidebar-menu transition-transform lg:hidden"
 >
   <a
     href="/"
@@ -234,9 +234,6 @@
     </div>
   </ul>
 </div>
-<div
-  class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 md:hidden sidebar-overlay"
-></div>
 
 <!-- end: Sidebar -->
 
