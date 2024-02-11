@@ -85,7 +85,9 @@
   <!-- List Card Articles -->
   <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:gap-10 mt-5">
     {#each latestArticles as { _id: id, title, image, created_at }}
-      <div class="mx-auto bg-white rounded-xl overflow-hidden shadow-md mb-4">
+      <div
+        class="w-full mx-auto bg-white rounded-xl overflow-hidden shadow-md mb-4"
+      >
         <img
           class="object-cover w-full h-48"
           src={image}
@@ -199,28 +201,3 @@
     </div>
   </div>
 </div>
-
-<!-- Testimoni User -->
-<!-- <div class="py-12 px-6 md:px-14 border-b border-solid border-dark-green">
-  <h2 class="mb-8 text-3xl font-extrabold leading-none text-center">
-    Apa yang mereka katakan tentang Kami
-  </h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5">
-    {#each data.testimonial as { _id: id, name, image, message }}
-      <div class="mx-auto rounded-xl overflow-hidden shadow-md mb-4 px-6 py-8">
-        <div class="flex items-center">
-          <img
-            src={image}
-            alt="Profile User {id}"
-            class="w-12 h-12 object-cover rounded-full mr-4 border-2 border-white"
-          />
-          <h3 class="text-l font-semibold text-gray-900">{name}</h3>
-        </div>
-        <p class="mt-2 text-gray-600 text-sm">
-          <i class="fa-solid fa-quote-left"></i>{message}
-        </p>
-      </div>
-    {/each}
-  </div>
-</div> -->

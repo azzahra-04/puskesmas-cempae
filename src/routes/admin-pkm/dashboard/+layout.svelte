@@ -1,7 +1,6 @@
 <script>
   import SideBarAdmin from "$lib/SideBarAdmin.svelte";
   import NavBarAdmin from "$lib/NavBarAdmin.svelte";
-  import Alert from "$lib/Alert.svelte";
 
   const subMenuItems = [
     { title: "Beranda", href: "/admin-pkm/dashboard" },
@@ -17,6 +16,5 @@
 
 <SideBarAdmin {subMenuItems} />
 <NavBarAdmin title={"Dashboard Admin Puskesmas"}>
-  <!-- <Alert /> -->
   <slot />
 </NavBarAdmin>

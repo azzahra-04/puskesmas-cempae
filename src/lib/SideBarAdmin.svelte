@@ -20,7 +20,7 @@
   >
     <div class="flex items-center">
       <img
-        src="../../images/lg_puskesmas.png"
+        src="../../../images/lg_puskesmas.png"
         alt="Logo Puskesmas"
         class="w-8 h-8 rounded object-cover"
       />

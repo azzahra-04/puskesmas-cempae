@@ -18,15 +18,15 @@
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
     {#each data.facilities as { _id: id, name, image, description }}
       <div class="rounded-lg shadow-xl mx-auto border border-dark-green">
-        <img class="p-5" src={`${image}`} alt={`Gambar Fasilitas ${id}`} />
+        <img class="p-5" src={image} alt="" />
         <div class="p-5 pt-0">
           <h5
             class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-black"
           >
-            {`${name}`}
+            {name}
           </h5>
           <p class="mb-3 font-normal text-justify">
-            {`${description}`}
+            {description}
           </p>
         </div>
       </div>

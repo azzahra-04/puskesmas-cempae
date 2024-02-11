@@ -2,7 +2,6 @@
   /** @type {import('./$types').PageServerData} */
   export let data;
 
-  // Fungsi Search Button
   let searchValue = "";
   let filteredArticle = [];
 
@@ -13,7 +12,6 @@
     });
   }
 
-  // Fungsi untuk Membatasi Tampilan Card
   let visibleCards = 3;
   let totalCards = data.articles.length;
 
@@ -53,12 +51,10 @@
   </div>
 
   <!-- List Card Articles -->
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-fit gap-10 mt-10"
-  >
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
     {#each (filteredArticle.length > 0 ? filteredArticle : data.articles).slice(0, visibleCards) as { _id: id, title, image, created_at }}
       <div
-        class="max-w-md mx-auto rounded-xl overflow-hidden shadow-md mb-4 border border-dark-green"
+        class="w-full mx-auto rounded-xl overflow-hidden shadow-md mb-4 border border-dark-green"
       >
         <img
           class="object-cover w-full h-48"
@@ -89,7 +85,7 @@
       on:click={showMore}
       type="button"
       class="bg-green px-6 py-2 mt-12 rounded-md flex mx-auto hover:bg-dark-green"
-      >Load More
+      >Tampilkan Lebih Banyak
     </button>
   {/if}
 </div>

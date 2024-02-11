@@ -2,7 +2,6 @@
   /** @type {import('./$types').PageServerData} */
   export let data;
 
-  // Fungsi Search Button
   let searchValue = "";
   let filteredData = [];
 
@@ -13,14 +12,12 @@
     });
   }
 
-  // Fungsi untuk Membatasi Tampilan Card
   let visibleCards = 3;
   let totalCards = data.doctorsSchedules.length;
 
   function showMore() {
     visibleCards += 3;
 
-    // Jangan biarkan visibleCards melebihi totalCards
     if (visibleCards > totalCards) {
       visibleCards = totalCards;
     }
@@ -134,7 +131,7 @@
     on:click={showMore}
     type="button"
     class="bg-green px-6 py-2 mt-12 rounded-md flex mx-auto hover:bg-dark-green"
-    >Load More
+    >Tampilkan Lebih Banyak
   </button>
 {/if}
 

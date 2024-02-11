@@ -3,27 +3,18 @@
   export let data;
 </script>
 
-<!-- Layanan Kesehatan -->
 <div class="pt-28 py-12 px-6 md:px-14 border-b border-solid border-dark-green">
-  <div class="bg-green p-5 rounded">
-    <h1 class="text-2xl font-bold mb-4">Layanan Puskesmas</h1>
-    <p class="text-l leading-relaxed text-justify mb-2">
-      Puskesmas menghadirkan fasilitas layanan rawat inap dan kamar bersalin
-      sebagai bagian integral dari komitmen mereka untuk memberikan perawatan
-      kesehatan yang holistik dan terjangkau kepada seluruh lapisan masyarakat.
-    </p>
-  </div>
-
-  <!-- JAM KUNJUNGAN PASIEN -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
-    <div class="rounded-lg shadow-xl border border-dark-green">
+  <!-- ATURAN MENGUNJUNGI PASIEN -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 my-10">
+    <div class="rounded-lg shadow-xl border border-dark-green md:col-span-1">
       <table class="w-full border-collapse">
         <thead>
           <tr>
             <th
               class="p-6 pb-0 mb-4 text-xl font-bold text-center tracking-tight dark:text-black"
-              >Jam Kunjungan Pasien</th
             >
+              Jam Kunjungan Pasien
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -40,7 +31,7 @@
               <h5 class="mb-4 text-xl font-bold tracking-tight dark:text-black">
                 SORE
               </h5>
-              <p class="mb-3">16.00 - 20.00 WITA</p>
+              <p>16.00 - 20.00 WITA</p>
             </td>
           </tr>
           <tr>
@@ -53,7 +44,7 @@
       </table>
     </div>
 
-    <div class="rounded-lg shadow-xl border border-dark-green">
+    <div class="rounded-lg shadow-xl border border-dark-green md:col-span-2">
       <div class="p-6">
         <h5 class="mb-4 text-xl font-bold tracking-tight text-center">
           Untuk Ketenangan dan Kenyamanan Pasien
@@ -80,11 +71,20 @@
     </div>
   </div>
 
+  <div class="bg-green p-5 rounded">
+    <h1 class="text-2xl font-bold mb-4">Layanan Puskesmas</h1>
+    <p class="text-l leading-relaxed text-justify mb-2">
+      Puskesmas menghadirkan fasilitas layanan rawat inap dan kamar bersalin
+      sebagai bagian integral dari komitmen mereka untuk memberikan perawatan
+      kesehatan yang holistik dan terjangkau kepada seluruh lapisan masyarakat.
+    </p>
+  </div>
+
   <!-- List Card Room -->
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
     {#each data.inpatientRooms as { _id: id, name, image, totalBed, emptyBed, filledBed }}
       <div class="rounded-lg shadow-xl mx-auto border border-dark-green">
-        <img class="p-5" src={image} alt="Kamar {id}" />
+        <img class="p-5" src={image} alt="" />
         <div class="p-5 py-0">
           <div class="flex flex-row">
             <p class="font-semibold">

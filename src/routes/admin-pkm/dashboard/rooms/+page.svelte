@@ -85,12 +85,12 @@
           placeholder="Search..."
           class="border p-2 rounded-s focus:outline-none sm:mt-0 md:text-sm"
         />
-        <button
+        <!-- <button
           on:click={handleSearch}
           class="grow px-4 py-2 rounded-e border bg-green hover:bg-dark-green sm:mt-0 md:text-sm"
         >
           <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+        </button> -->
       </div>
     </div>
   </div>

@@ -2,7 +2,6 @@
   /** @type {import('./$types').PageServerData} */
   export let data;
 
-  // Fungsi Search Button
   let searchValue = "";
   let filteredActivity = [];
 
@@ -13,7 +12,6 @@
     });
   }
 
-  // Fungsi untuk Membatasi Tampilan Card
   let visibleCards = 3;
   let totalCards = data.activities.length;
 
@@ -53,17 +51,15 @@
   </div>
 
   <!-- List Card Activities -->
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-fit gap-10 mt-10"
-  >
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
     {#each (filteredActivity.length > 0 ? filteredActivity : data.activities).slice(0, visibleCards) as { _id: id, title, image, created_at }}
       <div
-        class="max-w-md mx-auto rounded-xl overflow-hidden shadow-md mb-4 border border-dark-green"
+        class="w-full mx-auto rounded-xl overflow-hidden shadow-md mb-4 border border-dark-green"
       >
         <img
-          src={`${image}`}
+          src={image}
           class="w-full h-48 object-cover object-center shadow-md"
-          alt={`Gambar Kegiatan ${id}`}
+          alt=""
         />
 
         <div class="p-6">
@@ -88,7 +84,7 @@
       on:click={showMore}
       type="button"
       class="bg-green px-6 py-2 mt-12 rounded-md flex mx-auto hover:bg-dark-green"
-      >Load More
+      >Tampilkan Lebih Banyak
     </button>
   {/if}
 </div>

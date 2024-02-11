@@ -1,5 +1,5 @@
 import { onlineQueue } from "$db/collection/onlineQueue";
-import { fail, redirect } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 import { redirectRoleIsNot } from "$lib/server/guard";
 
 /** @type {import('./$types').PageLoad} */
