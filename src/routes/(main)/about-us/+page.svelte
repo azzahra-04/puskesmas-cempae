@@ -4,8 +4,8 @@
 >
   <div class="flex-1 text-center order-2 md:order-1 md:mt-32">
     <img
-      class="object-cover w-40 h-40 mx-auto rounded-full"
-      src="https://via.placeholder.com/200"
+      class="object-cover w-48 h-full mx-auto rounded"
+      src="./images/kepala-puskesmas.png"
       alt="Foto Kepala Puskesmas"
     />
     <h1 class="text-l mt-5">Muh. Jufri, SKM., M.Kes</h1>
