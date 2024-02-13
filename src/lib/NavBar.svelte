@@ -42,7 +42,7 @@
         ><i class="fa-solid fa-bars fa-2xl"></i></button
       >
       <div class="order-2 hidden lg:block">
-        <ul class="flex gap-16">
+        <ul class="flex gap-10">
           <li>
             <a href="/" class:active={routeId == "/(main)"}>Beranda</a>
           </li>

@@ -8,7 +8,7 @@
       src="./images/kepala-puskesmas.png"
       alt="Foto Kepala Puskesmas"
     />
-    <h1 class="text-l mt-5">Muh. Jufri, SKM., M.Kes</h1>
+    <h1 class="text-l mt-5">Muhammad Jufri, SKM., M.Kes</h1>
     <h1 class="text-sm mt-2">Kepala UPTD Puskesmas Cempae</h1>
   </div>
   <div class="flex-1 order-1 md:order-2 mt-24">

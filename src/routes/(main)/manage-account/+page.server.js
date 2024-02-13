@@ -24,7 +24,30 @@ export async function load({ locals }) {
 
 /** @type {import('./$types').Actions} */
 export const actions = {
-  editProfile: async ({ locals, request }) => {
+  editFotoProfile: async ({ locals, request }) => {
+    const data = await request.formData();
+    const image = data.get("image");
+    if (image.size > 0) {
+      const authToken = await getAuthToken();
+      const headers = {
+        Authorization: authToken,
+      };
+      const record = await pb
+        .collection("user_image")
+        .create({ image }, { headers });
+
+      const imageUrl = `${POCKETBASE_URL}/api/files/${record.collectionId}/${record.id}/${record.image}`;
+      const id = new ObjectId(locals.credential.userId.toString());
+      const result = await user.updateOne(
+        { _id: id },
+        { $set: { image: imageUrl } }
+      );
+    }
+
+    throw redirect(301, "/manage-account");
+  },
+
+  editDetailProfile: async ({ locals, request }) => {
     const data = await request.formData();
     const fullName = data.get("full-name");
     const gender = data.get("gender");
@@ -38,20 +61,6 @@ export const actions = {
       telephoneNumber,
       address,
     };
-    const image = data.get("image");
-    if (image.size > 0) {
-      const authToken = await getAuthToken();
-      const headers = {
-        Authorization: authToken,
-      };
-      const record = await pb
-        .collection("user_image")
-        .create({ image }, { headers });
-      doc = {
-        ...doc,
-        image: `${POCKETBASE_URL}/api/files/${record.collectionId}/${record.id}/${record.image}`,
-      };
-    }
 
     const id = new ObjectId(locals.credential.userId.toString());
     const result = await user.updateOne({ _id: id }, { $set: doc });
