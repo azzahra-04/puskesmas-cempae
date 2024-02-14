@@ -21,6 +21,6 @@ export const actions = {
     const id = new ObjectId(data.get("id"));
     const result = await activity.deleteOne({ _id: id });
 
-    throw redirect(301, "/admin-pkm/dashboard/activities");
+    redirect(301, "/admin-pkm/dashboard/activities");
   },
 };

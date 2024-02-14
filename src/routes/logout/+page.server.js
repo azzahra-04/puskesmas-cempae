@@ -3,7 +3,7 @@ import { redirect } from "@sveltejs/kit";
 
 export const load = async ({ cookies, locals }) => {
   if (!locals.credential) {
-    throw redirect(302, "/");
+    redirect(302, "/");
   }
 };
 
@@ -18,10 +18,10 @@ export const actions = {
     }
 
     if (deleted) {
-      cookies.delete("sessionId");
+      /* @migration task: add path argument */ cookies.delete("sessionId");
       locals.credential = null;
     }
 
-    throw redirect(302, "/");
+    redirect(302, "/");
   },
 };

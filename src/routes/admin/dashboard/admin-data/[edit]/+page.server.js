@@ -28,6 +28,6 @@ export const actions = {
     const id = new ObjectId(params.edit.toString());
     const result = await adminPuskesmas.updateOne({ _id: id }, { $set: doc });
 
-    throw redirect(301, "/admin/dashboard/admin-data");
+    redirect(301, "/admin/dashboard/admin-data");
   },
 };

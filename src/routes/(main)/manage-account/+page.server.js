@@ -44,7 +44,7 @@ export const actions = {
       );
     }
 
-    throw redirect(301, "/manage-account");
+    redirect(301, "/manage-account");
   },
 
   editDetailProfile: async ({ locals, request }) => {
@@ -65,6 +65,6 @@ export const actions = {
     const id = new ObjectId(locals.credential.userId.toString());
     const result = await user.updateOne({ _id: id }, { $set: doc });
 
-    throw redirect(301, "/manage-account");
+    redirect(301, "/manage-account");
   },
 };

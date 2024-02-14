@@ -19,6 +19,6 @@ export const actions = {
       return fail(401);
     }
 
-    throw redirect(301, "/about-us");
+    redirect(301, "/about-us");
   },
 };

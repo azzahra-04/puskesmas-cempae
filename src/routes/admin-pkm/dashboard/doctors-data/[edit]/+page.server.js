@@ -50,6 +50,6 @@ export const actions = {
     const id = new ObjectId(params.edit.toString());
     const result = await doctorsSchedule.updateOne({ _id: id }, { $set: doc });
 
-    throw redirect(301, "/admin-pkm/dashboard/doctors-data");
+    redirect(301, "/admin-pkm/dashboard/doctors-data");
   },
 };

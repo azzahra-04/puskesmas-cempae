@@ -6,7 +6,7 @@ import bcrypt from "bcrypt";
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ locals }) => {
   if (locals.credential) {
-    throw redirect(301, "/");
+    redirect(301, "/");
   }
 };
 
@@ -70,6 +70,6 @@ export const actions = {
       return fail(401);
     }
 
-    throw redirect(301, "/login");
+    redirect(301, "/login");
   },
 };

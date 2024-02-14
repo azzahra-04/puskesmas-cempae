@@ -69,6 +69,6 @@ export const actions = {
       return fail(401);
     }
 
-    throw redirect(301, "/admin/dashboard/admin-data");
+    redirect(301, "/admin/dashboard/admin-data");
   },
 };

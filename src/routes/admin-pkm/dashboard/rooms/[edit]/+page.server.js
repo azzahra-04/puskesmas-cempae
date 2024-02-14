@@ -46,6 +46,6 @@ export const actions = {
     const id = new ObjectId(params.edit.toString());
     const result = await inpatientRoom.updateOne({ _id: id }, { $set: doc });
 
-    throw redirect(301, "/admin-pkm/dashboard/rooms");
+    redirect(301, "/admin-pkm/dashboard/rooms");
   },
 };

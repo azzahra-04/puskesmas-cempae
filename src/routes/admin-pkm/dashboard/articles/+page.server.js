@@ -18,6 +18,6 @@ export const actions = {
     const id = new ObjectId(data.get("id"));
     const result = await article.deleteOne({ _id: id });
 
-    throw redirect(301, "/admin-pkm/dashboard/articles");
+    redirect(301, "/admin-pkm/dashboard/articles");
   },
 };

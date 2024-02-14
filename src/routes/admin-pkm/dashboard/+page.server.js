@@ -11,36 +11,22 @@ export async function load({ locals }) {
   redirectRoleIsNot("admin-pkm", locals.credential, "/admin-pkm/login");
 
   const users = await user.find({}).toArray();
-  const inpatientRooms = await inpatientRoom.find({}).toArray();
-  const facilities = await facility.find({}).toArray();
-  const articles = await article.find({}).toArray();
-  const activities = await activity.find({}).toArray();
-  const doctorsSchedules = await doctorsSchedule.find({}).toArray();
+  const doctorSchedules = await doctorsSchedule.find({}).toArray();
 
   return {
     users: users.map((v) => ({
       ...v,
       _id: v._id.toString(),
     })),
-    inpatientRooms: inpatientRooms.map((v) => ({
+    doctorSchedules: doctorSchedules.map((v) => ({
       ...v,
       _id: v._id.toString(),
     })),
-    facilities: facilities.map((v) => ({
-      ...v,
-      _id: v._id.toString(),
-    })),
-    articles: articles.map((v) => ({
-      ...v,
-      _id: v._id.toString(),
-    })),
-    activities: activities.map((v) => ({
-      ...v,
-      _id: v._id.toString(),
-    })),
-    doctorsSchedules: doctorsSchedules.map((v) => ({
-      ...v,
-      _id: v._id.toString(),
-    })),
+    inpatientRoomsCount: inpatientRoom.count(),
+    facilitiesCount: facility.count(),
+    articlesCount: article.count(),
+    activitiesCount: activity.count(),
+    doctorSchedulesCount: doctorsSchedule.count(),
+    usersCount: user.count(),
   };
 }

@@ -33,6 +33,6 @@ export const actions = {
       return fail(401);
     }
 
-    throw redirect(301, "/admin-pkm/dashboard/activities");
+    redirect(301, "/admin-pkm/dashboard/activities");
   },
 };

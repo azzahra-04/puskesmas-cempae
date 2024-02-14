@@ -42,6 +42,6 @@ export const actions = {
     const id = new ObjectId(params.edit.toString());
     const result = await facility.updateOne({ _id: id }, { $set: doc });
 
-    throw redirect(301, "/admin-pkm/dashboard/facilities");
+    redirect(301, "/admin-pkm/dashboard/facilities");
   },
 };

@@ -27,6 +27,6 @@ export const actions = {
     const id = new ObjectId(data.get("id"));
     const result = await inpatientRoom.deleteOne({ _id: id });
 
-    throw redirect(301, "/admin-pkm/dashboard/rooms");
+    redirect(301, "/admin-pkm/dashboard/rooms");
   },
 };

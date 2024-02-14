@@ -33,6 +33,6 @@ export const actions = {
       });
     }
 
-    throw redirect(301, "/admin/dashboard/admin-data");
+    redirect(301, "/admin/dashboard/admin-data");
   },
 };

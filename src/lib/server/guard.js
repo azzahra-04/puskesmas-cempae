@@ -2,7 +2,7 @@ import { redirect } from "@sveltejs/kit";
 
 export function redirectRoleIsNot(role, credential, redirectRoute) {
   if (!credential || !credential.role) {
-    throw redirect(307, redirectRoute || "/");
+    redirect(307, redirectRoute || "/");
   }
 
   const roleRedirectURL = {
@@ -12,6 +12,6 @@ export function redirectRoleIsNot(role, credential, redirectRoute) {
   };
 
   if (credential.role !== role) {
-    throw redirect(307, roleRedirectURL[credential.role] || "/");
+    redirect(307, roleRedirectURL[credential.role] || "/");
   }
 }

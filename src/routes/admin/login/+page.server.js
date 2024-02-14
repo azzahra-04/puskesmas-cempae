@@ -5,7 +5,7 @@ import { fail, redirect } from "@sveltejs/kit";
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ locals }) => {
   if (locals.credential) {
-    throw redirect(301, "/admin/dashboard");
+    redirect(301, "/admin/dashboard");
   }
 };
 
@@ -35,6 +35,6 @@ export const actions = {
       httpOnly: true,
     });
 
-    throw redirect(301, "/admin/dashboard");
+    redirect(301, "/admin/dashboard");
   },
 };

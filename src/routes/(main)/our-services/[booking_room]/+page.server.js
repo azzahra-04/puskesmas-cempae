@@ -64,6 +64,6 @@ export const actions = {
       }
     }
 
-    throw redirect(301, "/our-services");
+    redirect(301, "/our-services");
   },
 };

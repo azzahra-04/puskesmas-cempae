@@ -29,6 +29,6 @@ export const actions = {
       return fail(401);
     }
 
-    throw redirect(301, "/admin-pkm/dashboard/facilities");
+    redirect(301, "/admin-pkm/dashboard/facilities");
   },
 };

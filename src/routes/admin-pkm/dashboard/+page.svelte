@@ -1,12 +1,6 @@
 <script>
   /** @type {import('./$types').PageServerData} */
   export let data;
-
-  let dataInpatientRooms = data.inpatientRooms.length;
-  let dataFacilities = data.facilities.length;
-  let dataArticles = data.articles.length;
-  let dataActivities = data.activities.length;
-  let dataDoctorSchedules = data.doctorsSchedules.length;
 </script>
 
 <div class="p-6">
@@ -18,7 +12,15 @@
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-person-booth fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">{dataInpatientRooms}</div>
+          <div class="text-2xl font-semibold mb-1">
+            {#await data.inpatientRoomsCount}
+              loading
+            {:then count}
+              {count}
+            {:catch error}
+              {error.message}
+            {/await}
+          </div>
           <div class="text-sm">Ruangan Rawat Inap</div>
         </div>
       </div>
@@ -29,7 +31,15 @@
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-house-medical fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">{dataFacilities}</div>
+          <div class="text-2xl font-semibold mb-1">
+            {#await data.facilitiesCount}
+              loading
+            {:then count}
+              {count}
+            {:catch error}
+              {error.message}
+            {/await}
+          </div>
           <div class="text-sm">Fasilitas</div>
         </div>
       </div>
@@ -40,7 +50,15 @@
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-newspaper fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">{dataArticles}</div>
+          <div class="text-2xl font-semibold mb-1">
+            {#await data.articlesCount}
+              loading
+            {:then count}
+              {count}
+            {:catch error}
+              {error.message}
+            {/await}
+          </div>
           <div class="text-sm">Artikel</div>
         </div>
       </div>
@@ -51,7 +69,15 @@
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-hand-holding-medical fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">{dataActivities}</div>
+          <div class="text-2xl font-semibold mb-1">
+            {#await data.activitiesCount}
+              loading
+            {:then count}
+              {count}
+            {:catch error}
+              {error.message}
+            {/await}
+          </div>
           <div class="text-sm">Kegiatan</div>
         </div>
       </div>
@@ -62,7 +88,15 @@
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-user-doctor fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">{dataDoctorSchedules}</div>
+          <div class="text-2xl font-semibold mb-1">
+            {#await data.doctorSchedulesCount}
+              loading
+            {:then count}
+              {count}
+            {:catch error}
+              {error.message}
+            {/await}
+          </div>
           <div class="text-sm">Dokter</div>
         </div>
       </div>
@@ -90,7 +124,7 @@
             </tr>
           </thead>
           <tbody>
-            {#each data.doctorsSchedules as doctor}
+            {#each data.doctorSchedules as doctor}
               <tr>
                 <td class="py-2 px-4 border-b border-b-gray-50">
                   <div class="flex items-center">

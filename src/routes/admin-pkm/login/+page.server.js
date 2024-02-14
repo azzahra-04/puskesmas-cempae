@@ -6,7 +6,7 @@ import bcrypt from "bcrypt";
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ locals }) => {
   if (locals.credential) {
-    throw redirect(301, "/admin-pkm/dashboard");
+    redirect(301, "/admin-pkm/dashboard");
   }
 };
 
@@ -33,7 +33,7 @@ export const actions = {
           path: "/",
           httpOnly: true,
         });
-        throw redirect(301, "/admin-pkm/dashboard");
+        redirect(301, "/admin-pkm/dashboard");
       }
     }
   },
