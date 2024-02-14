@@ -95,11 +95,14 @@
                 class="w-10 h-10 rounded-full mr-4"
               />
             </a>
-            <a
-              href="/logout"
-              class="grow border-solid border-green border-[1px] px-6 py-2 rounded hover:bg-dark-green"
-              >Keluar</a
-            >
+            <form action="/logout" method="POST">
+              <button
+                type="submit"
+                class="grow bg-green px-6 py-2 rounded hover:bg-dark-green hover:border-solid hover:border-white hover:border-[1px] text-xl"
+              >
+                Keluar
+              </button>
+            </form>
           </div>
         {:else}
           <a
@@ -213,12 +216,14 @@
           class="grow border-solid border-green border-[1px] mr-4 px-6 py-2 rounded text-xl"
           >Kelola Akun</a
         >
-        <a
-          data-sveltekit-reload
-          href="/logout"
-          class="grow bg-green px-6 py-2 rounded hover:bg-dark-green hover:border-solid hover:border-white hover:border-[1px] text-xl"
-          >Keluar</a
-        >
+        <form action="/logout" method="POST">
+          <button
+            type="submit"
+            class="grow bg-green px-6 py-2 rounded hover:bg-dark-green hover:border-solid hover:border-white hover:border-[1px] text-xl"
+          >
+            Keluar
+          </button>
+        </form>
       {:else}
         <a
           href="/login"
