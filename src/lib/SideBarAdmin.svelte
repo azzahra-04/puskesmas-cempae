@@ -32,21 +32,32 @@
   </div>
   <ul class="mt-4">
     {#each subMenuItems as { title, href }}
-      <li class="mb-1 group">
-        <a
-          {href}
-          class="flex items-center py-2 px-4 text-sm hover:underline"
-          class:font-semibold={title === "Beranda" ||
-            title === "Kelola Data" ||
-            title === "Keluar"}
-          class:hover:no-underline={title === "Kelola Data"}
-        >
-          {#if icons[title]}
-            <i class={icons[title] + " mr-2"}></i>
-          {/if}
-          {title}
-        </a>
-      </li>
+      {#if title === "Keluar"}
+        <li class="mb-1 group">
+          <form action="/logout" method="POST">
+            <button
+              type="submit"
+              class="flex items-center py-2 px-4 text-sm font-semibold hover:underline"
+            >
+              Keluar
+            </button>
+          </form>
+        </li>
+      {:else}
+        <li class="mb-1 group">
+          <a
+            {href}
+            class="flex items-center py-2 px-4 text-sm hover:underline"
+            class:font-semibold={title === "Beranda" || title === "Kelola Data"}
+            class:hover:no-underline={title === "Kelola Data"}
+          >
+            {#if icons[title]}
+              <i class={icons[title] + " mr-2"}></i>
+            {/if}
+            {title}
+          </a>
+        </li>
+      {/if}
     {/each}
   </ul>
 </div>

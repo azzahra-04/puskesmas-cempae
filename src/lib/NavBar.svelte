@@ -98,7 +98,7 @@
             <form action="/logout" method="POST">
               <button
                 type="submit"
-                class="grow bg-green px-6 py-2 rounded hover:bg-dark-green hover:border-solid hover:border-white hover:border-[1px] text-xl"
+                class="grow border-solid border-green border-[1px] px-6 py-2 rounded hover:bg-dark-green"
               >
                 Keluar
               </button>
