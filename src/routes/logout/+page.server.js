@@ -17,11 +17,24 @@ export const actions = {
       console.error(error);
     }
 
+    const role = locals.credential.role;
+
     if (deleted) {
       cookies.delete("sessionId", {
         path: "/",
       });
       locals.credential = null;
     }
+
+    let redirectPath;
+    if (role === "admin") {
+      redirectPath = "/admin/login";
+    } else if (role === "admin-pkm") {
+      redirectPath = "/admin-pkm/login";
+    } else {
+      redirectPath = "/";
+    }
+
+    redirect(302, redirectPath);
   },
 };
