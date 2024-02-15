@@ -1,6 +1,5 @@
 import { adminPuskesmas } from "$db/collection/adminPuskesmas";
 import { ObjectId } from "mongodb";
-import { redirect } from "@sveltejs/kit";
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
@@ -28,6 +27,6 @@ export const actions = {
     const id = new ObjectId(params.edit.toString());
     const result = await adminPuskesmas.updateOne({ _id: id }, { $set: doc });
 
-    redirect(301, "/admin/dashboard/admin-data");
+    return { success: true };
   },
 };

@@ -9,7 +9,13 @@
 
   <hr class="border-b border-gray-300" />
 
-  {#if form?.error}
+  {#if form?.success}
+    <div class="flex items-center p-4 my-4 text-sm border rounded" role="alert">
+      <i class="fa-solid fa-circle-check" style="color: green;"></i>
+      &nbsp;
+      <p class="font-medium">Data berhasil ditambahkan!</p>
+    </div>
+  {:else if form?.error}
     <div class="flex items-center p-4 my-4 text-sm border rounded" role="alert">
       <i class="fa-solid fa-circle-exclamation" style="color: red;"></i>
       &nbsp;
@@ -86,13 +92,14 @@
 
     <button
       type="submit"
-      class="grow border-solid border-green border-[1px] px-6 py-2 rounded hover:bg-dark-green mr-4"
+      class="grow text-sm border-solid border-green border-[1px] px-6 py-2 rounded hover:bg-dark-green mr-4"
       >Tambah Data</button
     >
     <a
       type="button"
       href="/admin-pkm/dashboard/rooms"
-      class="grow bg-green px-6 py-2 rounded hover:bg-dark-green">Kembali</a
+      class="grow text-sm bg-green px-6 py-2 rounded hover:bg-dark-green"
+      >Kembali</a
     >
   </form>
 </div>

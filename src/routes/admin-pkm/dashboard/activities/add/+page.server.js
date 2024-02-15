@@ -1,6 +1,6 @@
 import { POCKETBASE_URL } from "$env/static/private";
 import { activity } from "$db/collection/activity";
-import { fail, redirect } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 import { pb, getAuthToken } from "$lib/server/pocketbase";
 
 /** @type {import('./$types').Actions} */
@@ -33,6 +33,6 @@ export const actions = {
       return fail(401);
     }
 
-    redirect(301, "/admin-pkm/dashboard/activities");
+    return { success: true };
   },
 };

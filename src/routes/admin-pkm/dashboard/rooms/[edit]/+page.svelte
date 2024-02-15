@@ -1,5 +1,6 @@
 <script>
   export let data;
+  export let form;
 </script>
 
 <div class="pt-8 py-12 px-6 md:px-14 lg:px-40">
@@ -9,10 +10,26 @@
 
   <hr class="border-b border-gray-300" />
 
+  {#if form?.success}
+    <div class="flex items-center p-4 my-4 text-sm border rounded" role="alert">
+      <i class="fa-solid fa-circle-check" style="color: green;"></i>
+      &nbsp;
+      <p class="font-medium">Data berhasil diperbarui!</p>
+    </div>
+  {:else if form?.error}
+    <div class="flex items-center p-4 my-4 text-sm border rounded" role="alert">
+      <i class="fa-solid fa-circle-exclamation" style="color: red;"></i>
+      &nbsp;
+      <p class="font-medium text-red">
+        Data gagal diperbarui! Silakan coba lagi.
+      </p>
+    </div>
+  {/if}
+
   <img
     src={data.inpatientRoom.image}
     class="w-1/2 rounded mx-auto mt-10"
-    alt="Foto Ruang Rawat Inap - {data.inpatientRoom.name}"
+    alt=""
   />
 
   <form
@@ -91,13 +108,14 @@
 
     <button
       type="submit"
-      class="grow border-solid border-green border-[1px] px-6 py-2 rounded hover:bg-dark-green mr-4"
+      class="grow text-sm border-solid border-green border-[1px] px-6 py-2 rounded hover:bg-dark-green mr-4"
       >Edit</button
     >
     <a
       type="button"
       href="/admin-pkm/dashboard/rooms"
-      class="grow bg-green px-6 py-2 rounded hover:bg-dark-green">Kembali</a
+      class="grow text-sm bg-green px-6 py-2 rounded hover:bg-dark-green"
+      >Kembali</a
     >
   </form>
 </div>

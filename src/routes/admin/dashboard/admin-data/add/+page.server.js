@@ -1,6 +1,6 @@
 import { credential } from "$db/collection/credential";
 import { adminPuskesmas } from "$db/collection/adminPuskesmas";
-import { fail, redirect } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 import { POCKETBASE_URL } from "$env/static/private";
 import { pb, getAuthToken } from "$lib/server/pocketbase";
 import bcrypt from "bcrypt";
@@ -69,6 +69,6 @@ export const actions = {
       return fail(401);
     }
 
-    redirect(301, "/admin/dashboard/admin-data");
+    return { success: true };
   },
 };

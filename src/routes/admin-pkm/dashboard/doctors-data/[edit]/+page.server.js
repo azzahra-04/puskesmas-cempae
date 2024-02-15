@@ -1,6 +1,5 @@
 import { doctorsSchedule } from "$db/collection/doctorsSchedule";
 import { ObjectId } from "mongodb";
-import { redirect } from "@sveltejs/kit";
 import { pb, getAuthToken } from "$lib/server/pocketbase";
 import { POCKETBASE_URL } from "$env/static/private";
 
@@ -50,6 +49,6 @@ export const actions = {
     const id = new ObjectId(params.edit.toString());
     const result = await doctorsSchedule.updateOne({ _id: id }, { $set: doc });
 
-    redirect(301, "/admin-pkm/dashboard/doctors-data");
+    return { success: true };
   },
 };

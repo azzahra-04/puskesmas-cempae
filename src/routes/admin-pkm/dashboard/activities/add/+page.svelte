@@ -9,7 +9,13 @@
 
   <hr class="border-b border-gray-300" />
 
-  {#if form?.error}
+  {#if form?.success}
+    <div class="flex items-center p-4 my-4 text-sm border rounded" role="alert">
+      <i class="fa-solid fa-circle-check" style="color: green;"></i>
+      &nbsp;
+      <p class="font-medium">Data berhasil ditambahkan!</p>
+    </div>
+  {:else if form?.error}
     <div class="flex items-center p-4 my-4 text-sm border rounded" role="alert">
       <i class="fa-solid fa-circle-exclamation" style="color: red;"></i>
       &nbsp;

@@ -1,6 +1,5 @@
 import { activity } from "$db/collection/activity";
 import { ObjectId } from "mongodb";
-import { redirect } from "@sveltejs/kit";
 import { pb, getAuthToken } from "$lib/server/pocketbase";
 import { POCKETBASE_URL } from "$env/static/private";
 
@@ -46,6 +45,6 @@ export const actions = {
     const id = new ObjectId(params.edit.toString());
     const result = await activity.updateOne({ _id: id }, { $set: doc });
 
-    redirect(301, "/admin-pkm/dashboard/activities");
+    return { success: true };
   },
 };
