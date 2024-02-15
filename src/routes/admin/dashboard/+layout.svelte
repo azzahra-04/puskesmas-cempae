@@ -7,7 +7,7 @@
     { title: "Kelola Data" },
     { title: "Data Admin Puskesmas", href: "/admin/dashboard/admin-data" },
     { title: "Data Pengguna", href: "/admin/dashboard/user-data" },
-    { title: "Keluar", href: "/logout" },
+    { title: "Keluar" },
   ];
 </script>
 

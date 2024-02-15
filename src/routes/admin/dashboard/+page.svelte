@@ -70,7 +70,7 @@
                   <div class="flex items-center">
                     <img
                       src={image || "https://placehold.co/32x32"}
-                      alt="Profile Admin Puskesmas"
+                      alt=""
                       class="w-8 h-8 rounded-full object-cover block"
                     />
                     <p class="text-sm font-medium ml-2 truncate">
@@ -134,7 +134,7 @@
                   <div class="flex items-center">
                     <img
                       src={image || "https://placehold.co/32x32"}
-                      alt="Profile User"
+                      alt=""
                       class="w-8 h-8 rounded-full object-cover block"
                     />
                     <p class="text-sm font-medium ml-2 truncate">

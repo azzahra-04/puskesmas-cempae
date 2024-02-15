@@ -130,7 +130,7 @@
                   <div class="flex items-center">
                     <img
                       src={doctor.image}
-                      alt="Profile Doctor"
+                      alt=""
                       class="w-8 h-8 rounded-full object-cover block"
                     />
                     <p class="text-sm font-medium ml-2">
@@ -194,7 +194,7 @@
                   <div class="flex items-center">
                     <img
                       src={user.image}
-                      alt="Profile User"
+                      alt=""
                       class="w-8 h-8 rounded-full object-cover block"
                     />
                     <p class="text-sm font-medium ml-2">

@@ -1,7 +1,7 @@
 import { session } from "$lib/server/auth.js";
 import { redirect } from "@sveltejs/kit";
 
-export const load = async ({ cookies, locals }) => {
+export const load = async ({ locals }) => {
   if (!locals.credential) {
     redirect(302, "/");
   }
@@ -18,10 +18,10 @@ export const actions = {
     }
 
     if (deleted) {
-      /* @migration task: add path argument */ cookies.delete("sessionId");
+      cookies.delete("sessionId", {
+        path: "/",
+      });
       locals.credential = null;
     }
-
-    redirect(302, "/");
   },
 };
