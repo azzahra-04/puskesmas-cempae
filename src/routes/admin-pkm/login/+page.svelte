@@ -31,17 +31,17 @@
           id="username"
           name="username"
           class="text-sm mt-1 p-2 border rounded w-full focus:outline-none focus:ring-2 focus:ring-green focus:border-transparent"
-          placeholder="Your username"
+          placeholder="Masukkan username Anda"
         />
       </div>
       <div class="mb-4">
-        <label for="password" class="block text-sm">Password</label>
+        <label for="password" class="block text-sm">Kata Sandi</label>
         <input
           type="password"
           id="password"
           name="password"
           class="text-sm mt-1 p-2 border rounded w-full focus:outline-none focus:ring-2 focus:ring-green focus:border-transparent"
-          placeholder="Your password"
+          placeholder="Masukkan kata sandi Anda"
         />
       </div>
       <div class="mb-6 text-center">

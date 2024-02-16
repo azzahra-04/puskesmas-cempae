@@ -33,18 +33,18 @@
           id="username"
           name="username"
           class="text-sm mt-1 p-2 border rounded w-full focus:outline-none focus:ring-2 focus:ring-green focus:border-transparent"
-          placeholder="Your username"
+          placeholder="Masukkan username Anda"
           required
         />
       </div>
       <div class="mb-4">
-        <label for="password" class="block text-sm">Password</label>
+        <label for="password" class="block text-sm">Kata Sandi</label>
         <input
           type="password"
           id="password"
           name="password"
           class="text-sm mt-1 p-2 border rounded w-full focus:outline-none focus:ring-2 focus:ring-green focus:border-transparent"
-          placeholder="Your password"
+          placeholder="Masukkan kata sandi Anda"
           required
         />
       </div>
@@ -52,13 +52,12 @@
         <button
           type="submit"
           class="grow bg-green px-6 py-2 rounded border-black border-[1px] hover:bg-dark-green"
-          >Login
+          >Masuk
         </button>
       </div>
       <p class="text-sm text-center">
-        Don't have an account? <a
-          href="/register"
-          class="border-b hover:font-medium">Register here.</a
+        Belum punya Akun? <a href="/register" class="border-b hover:font-medium"
+          >Daftar disini.</a
         >
       </p>
     </form>

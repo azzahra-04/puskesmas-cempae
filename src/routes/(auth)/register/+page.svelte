@@ -30,7 +30,7 @@
         />
       </div>
       <div class="mb-4">
-        <label for="address" class="block text-sm">Address</label>
+        <label for="address" class="block text-sm">Alamat</label>
         <input
           type="text"
           id="address"
@@ -41,7 +41,7 @@
         />
       </div>
       <div class="mb-4">
-        <label for="phone" class="block text-sm">Phone</label>
+        <label for="phone" class="block text-sm">No. Telepon</label>
         <input
           type="number"
           id="phone"
@@ -63,7 +63,7 @@
         />
       </div>
       <div class="mb-4">
-        <label for="password" class="block text-sm">Password</label>
+        <label for="password" class="block text-sm">Kata Sandi</label>
         <input
           type="password"
           id="password"
@@ -77,13 +77,12 @@
         <button
           type="submit"
           class="grow bg-green px-6 py-2 rounded border-black border-[1px] hover:bg-dark-green"
-          >Register
+          >Daftar
         </button>
       </div>
       <p class="text-sm text-center">
-        Already have an account? <a
-          href="/login"
-          class="border-b hover:font-medium">Login here.</a
+        Sudah punya Akun? <a href="/login" class="border-b hover:font-medium"
+          >Masuk disini.</a
         >
       </p>
     </form>
