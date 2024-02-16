@@ -25,11 +25,12 @@ export const actions = {
       return fail(401);
     }
 
-    // const queues = await onlineQueue
-    //   .find({ visitDate: visitDate, poli: poli })
-    //   .toArray();
-
-    // return { success: true, queueNumber: length(queues) };
-    // // throw redirect(301, "/doctor-schedules");
+    const formatDate = visitDate.split("-").reverse().join("-");
+    const queueNumber = await onlineQueue.count({ visitDate: visitDate });
+    return {
+      success: true,
+      detail: { complaint, poli, formatDate },
+      queueNumber,
+    };
   },
 };
