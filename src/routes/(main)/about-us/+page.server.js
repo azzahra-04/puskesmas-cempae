@@ -1,5 +1,5 @@
 import { feedback } from "$db/collection/feedback";
-import { fail, redirect } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -19,6 +19,6 @@ export const actions = {
       return fail(401);
     }
 
-    redirect(301, "/about-us");
+    return { success: true };
   },
 };

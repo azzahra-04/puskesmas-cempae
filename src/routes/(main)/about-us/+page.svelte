@@ -1,3 +1,17 @@
+<script>
+  export let form;
+  let open = false;
+
+  function handleClick() {
+    if (form.success) {
+      open = true;
+      setTimeout(() => {
+        open = false;
+      }, 2000);
+    }
+  }
+</script>
+
 <!-- SAMBUTAN KEPALA PUSKESMAS -->
 <section
   class="flex flex-col gap-10 px-6 md:flex-row items-center py-16 md:gap-0 lg:px-20"
@@ -174,6 +188,7 @@
           </div>
           <button
             type="submit"
+            on:click={handleClick()}
             class="w-full px-4 py-2 text-black font-medium bg-green border rounded hover:bg-dark-green"
           >
             Submit
@@ -183,3 +198,20 @@
     </div>
   </div>
 </section>
+
+<!-- Success Modals -->
+{#if form?.success && open}
+  <button class="fixed inset-0 w-full h-full bg-black bg-opacity-40">
+    <div
+      class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg mx-auto px-4"
+    >
+      <div class="bg-white rounded-md shadow">
+        <div class="space-y-6 py-8 px-6 mt-4 leading-relaxed">
+          <p>Kritik dan saran Anda telah terkirim.</p>
+          <i class="fa-regular fa-circle-check fa-5x text-dark-green"></i>
+          <p>Terima Kasih.</p>
+        </div>
+      </div>
+    </div>
+  </button>
+{/if}
