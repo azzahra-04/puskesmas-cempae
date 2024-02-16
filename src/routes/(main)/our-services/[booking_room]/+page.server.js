@@ -3,7 +3,7 @@ import { bookingRoom } from "$db/collection/bookingRoom";
 import { inpatientRoom } from "$db/collection/inpatientRoom";
 import { user } from "$db/collection/user";
 import { ObjectId } from "mongodb";
-import { fail, redirect } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 import { pb, getAuthToken } from "$lib/server/pocketbase";
 import { redirectRoleIsNot } from "$lib/server/guard";
 
@@ -64,6 +64,6 @@ export const actions = {
       }
     }
 
-    redirect(301, "/our-services");
+    return { success: true };
   },
 };
