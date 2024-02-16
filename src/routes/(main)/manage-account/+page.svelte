@@ -24,19 +24,19 @@
         action="?/editFotoProfile"
         method="POST"
         enctype="multipart/form-data"
-        class="mt-6 flex"
+        class="mt-6 flex w-full"
       >
-        <div class="relative flex-grow">
+        <div>
           <input
             id="image"
             name="image"
             type="file"
-            class="absolute inset-0 opacity-0 cursor-pointer"
+            class="absolute opacity-0 cursor-pointer"
             onchange="document.getElementById('file-name').textContent = this.files.length > 0 ? this.files[0].name : ''"
           />
           <label
             for="image"
-            class="text-sm bg-white w-full border border-gray-300 rounded-l shadow-sm py-2 px-8 inline-block cursor-pointer"
+            class="text-sm bg-white border border-gray-300 border-r-0 rounded-l shadow-sm py-2 px-8 inline-block cursor-pointer"
           >
             Pilih Foto
           </label>
@@ -44,7 +44,7 @@
 
         <button
           type="submit"
-          class="grow bg-green text-sm px-4 py-2 rounded-r transition-colors duration-300 ease-in-out hover:bg-dark-green"
+          class="bg-green text-sm px-4 py-2 rounded-r transition-colors duration-300 ease-in-out hover:bg-dark-green"
         >
           Perbarui
         </button>
