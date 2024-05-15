@@ -4,7 +4,10 @@ import { ObjectId } from "mongodb";
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ locals }) {
-  redirectRoleIsNot("user", locals.credential, "/login");
+  // redirectRoleIsNot("user", locals.credential, "/login");\
+  if (!locals.credential) {
+    return {};
+  }
 
   const data = await user.findOne({
     _id: new ObjectId(locals.credential.userId),
