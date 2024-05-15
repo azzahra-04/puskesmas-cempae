@@ -11,6 +11,17 @@
       }, 2000);
     }
   }
+
+  function getCurrentDate() {
+    const today = new Date();
+    return today.toISOString().split("T")[0];
+  }
+
+  function getMaxDate() {
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 3);
+    return maxDate.toISOString().split("T")[0];
+  }
 </script>
 
 <div
@@ -55,6 +66,8 @@
             id="visit-date"
             name="visit-date"
             type="date"
+            min={getCurrentDate()}
+            max={getMaxDate()}
             required
           />
         </div>

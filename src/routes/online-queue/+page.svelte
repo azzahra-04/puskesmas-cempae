@@ -8,6 +8,17 @@
     }
   }
 
+  function getCurrentDate() {
+    const today = new Date();
+    return today.toISOString().split("T")[0];
+  }
+
+  function getMaxDate() {
+    const maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 3);
+    return maxDate.toISOString().split("T")[0];
+  }
+
   function printQueue() {
     // Get elemen canvas
     const canvas = document.createElement("canvas");
@@ -128,6 +139,8 @@
         id="visit-date"
         type="date"
         name="visit-date"
+        min={getCurrentDate()}
+        max={getMaxDate()}
         required
       />
     </div>

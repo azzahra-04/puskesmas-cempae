@@ -45,6 +45,10 @@ export const actions = {
     const id = new ObjectId(params.edit.toString());
     const result = await inpatientRoom.updateOne({ _id: id }, { $set: doc });
 
+    if (result.modifiedCount === 0) {
+      return { success: false, message: "Tidak ada data yang diperbarui." };
+    }
+
     return { success: true };
   },
 };

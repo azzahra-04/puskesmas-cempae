@@ -5,7 +5,7 @@
 
 <div class="pt-8 py-12 px-6 md:px-14 lg:px-40">
   <h2 class="my-4 text-center text-3xl font-semibold leading-none">
-    Edit Data Kegiatan Puskesmas
+    Edit Data Artikel
   </h2>
 
   <hr class="border-b border-gray-300" />
@@ -23,6 +23,14 @@
       <p class="font-medium text-red">
         Data gagal diperbarui! Silakan coba lagi.
       </p>
+    </div>
+  {/if}
+
+  {#if form?.message}
+    <div class="flex items-center p-4 mt-4 text-sm border rounded" role="alert">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      &nbsp;
+      <p class="font-medium">{form.message}</p>
     </div>
   {/if}
 
@@ -53,7 +61,7 @@
     </div>
     <div class="mb-6">
       <label for="description" class="block mb-2 text-sm font-medium"
-        >Deksripsi Artikel</label
+        >Deskripsi Artikel</label
       >
       <textarea
         type="text"

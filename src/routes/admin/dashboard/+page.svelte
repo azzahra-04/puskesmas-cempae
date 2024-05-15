@@ -39,16 +39,6 @@
       <div class="flex justify-between mb-4 items-start">
         <div class="font-medium">Daftar Admin Puskesmas</div>
       </div>
-      <div class="relative w-full mr-2 mb-4">
-        <input
-          type="text"
-          class="py-2 pr-4 pl-10 bg-gray-50 w-full outline-none border border-gray-100 rounded-md text-sm"
-          placeholder="Search Admin..."
-        />
-        <i
-          class="fa-solid fa-magnifying-glass absolute top-1/2 left-4 -translate-y-1/2"
-        ></i>
-      </div>
       <div class="overflow-x-auto">
         <table class="w-full" data-tab-for="order" data-page="active">
           <thead>
@@ -95,16 +85,6 @@
     >
       <div class="flex justify-between mb-4 items-start">
         <div class="font-medium">Daftar Pengguna</div>
-      </div>
-      <div class="relative w-full mr-2 mb-4">
-        <input
-          type="text"
-          class="py-2 pr-4 pl-10 bg-gray-50 w-full outline-none border border-gray-100 rounded-md text-sm"
-          placeholder="Search User..."
-        />
-        <i
-          class="fa-solid fa-magnifying-glass absolute top-1/2 left-4 -translate-y-1/2"
-        ></i>
       </div>
       <div class="overflow-x-auto">
         <table class="w-full min-w-[540px]">

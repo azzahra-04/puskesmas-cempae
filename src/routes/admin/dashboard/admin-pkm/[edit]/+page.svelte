@@ -26,9 +26,17 @@
     </div>
   {/if}
 
+  {#if form?.message}
+    <div class="flex items-center p-4 mt-4 text-sm border rounded" role="alert">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      &nbsp;
+      <p class="font-medium">{form.message}</p>
+    </div>
+  {/if}
+
   <form
     action="?/edit"
-    class="pt-12"
+    class="pt-6"
     method="POST"
     enctype="multipart/form-data"
   >
@@ -71,13 +79,7 @@
     </div>
     <button
       type="submit"
-      class="grow border-solid border-green border-[1px] px-6 py-2 rounded hover:bg-dark-green mr-4"
-      >Edit</button
-    >
-    <a
-      type="button"
-      href="/admin/dashboard/admin-data"
-      class="grow bg-green px-6 py-2 rounded hover:bg-dark-green">Kembali</a
+      class="grow bg-green px-6 py-2 rounded hover:bg-dark-green">Edit</button
     >
   </form>
 </div>

@@ -1,3 +1,7 @@
+<script>
+  export let form;
+</script>
+
 <div class="min-h-screen flex items-center justify-center p-4">
   <!-- Bagian Kiri (Form Register) -->
   <div class="w-full md:w-1/2 p-8 bg-white rounded border mx-10">
@@ -5,6 +9,39 @@
       Selamat datang di Puskesmas Cempae! 👋
     </h1>
     <p class="text-center">Daftarkan diri Anda terlebih dahulu.</p>
+
+    {#if form?.success}
+      <div
+        class="flex items-center max-w-md mx-auto p-4 my-4 text-sm"
+        role="alert"
+      >
+        <i class="fa-solid fa-circle-check" style="color: green;"></i>
+        &nbsp;
+        <p class="font-medium">Akun berhasil dibuat!</p>
+      </div>
+    {:else if form?.error}
+      <div
+        class="flex items-center max-w-md mx-auto p-4 my-4 text-sm"
+        role="alert"
+      >
+        <i class="fa-solid fa-circle-exclamation" style="color: red;"></i>
+        &nbsp;
+        <p class="font-medium text-red">
+          Akun gagal dibuat! Silakan coba lagi.
+        </p>
+      </div>
+    {/if}
+
+    {#if form?.message}
+      <div
+        class="flex items-center max-w-md mx-auto p-4 my-4 text-sm"
+        role="alert"
+      >
+        <i class="fa-solid fa-circle-exclamation" style="color: red;"></i>
+        &nbsp;
+        <p class="font-normal text-red">{form.message}</p>
+      </div>
+    {/if}
 
     <form action="?/register" method="POST" class="max-w-md mx-auto mt-4">
       <div class="mb-4">

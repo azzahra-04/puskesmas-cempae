@@ -110,7 +110,7 @@
             <div class="w-full h-60 sm:h-52 md:h-56">
               <img
                 src={image}
-                class="w-full h-full object-cover object-center shadow-md rounded-xl"
+                class="w-full h-full object-cover object-center shadow-md rounded-xl border border-dark-green"
                 alt={`Gambar Dokter ${id}`}
               />
             </div>
@@ -130,7 +130,7 @@
   <button
     on:click={showMore}
     type="button"
-    class="bg-green px-6 py-2 mt-12 rounded-md flex mx-auto hover:bg-dark-green"
+    class="bg-green px-6 py-2 m-6 rounded-md flex mx-auto hover:bg-dark-green"
     >Tampilkan Lebih Banyak
   </button>
 {/if}

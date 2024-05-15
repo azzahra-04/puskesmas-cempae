@@ -162,7 +162,7 @@
               name="name"
               placeholder="Masukkan Nama Lengkap"
               required
-              class="w-full mt-2 px-3 py-2 outline-none border shadow-sm rounded"
+              class="text-sm w-full mt-2 px-3 py-2 outline-none border shadow-sm rounded"
             />
           </div>
           <div>
@@ -173,7 +173,7 @@
               name="email"
               placeholder="Example@gmail.com"
               required
-              class="w-full mt-2 px-3 py-2 outline-none border shadow-sm rounded"
+              class="text-sm w-full mt-2 px-3 py-2 outline-none border shadow-sm rounded"
             />
           </div>
           <div>
@@ -183,7 +183,7 @@
               name="message"
               placeholder="Masukkan kritik dan saran"
               required
-              class="w-full mt-2 h-36 px-3 py-2 resize-none appearance-none outline-none border shadow-sm rounded"
+              class="text-sm w-full mt-2 h-36 px-3 py-2 resize-none appearance-none outline-none border shadow-sm rounded"
             ></textarea>
           </div>
           <button
@@ -191,7 +191,7 @@
             on:click={handleClick()}
             class="w-full px-4 py-2 text-black font-medium bg-green border rounded hover:bg-dark-green"
           >
-            Submit
+            Kirim
           </button>
         </form>
       </div>

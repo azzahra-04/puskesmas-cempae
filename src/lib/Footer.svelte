@@ -8,7 +8,7 @@
         <h2
           class="text-lg font-semibold mb-4 border-b-2 w-32 border-dark-green pb-2"
         >
-          Address
+          Alamat
         </h2>
         <p class="mb-4">
           Jl. Petta Oddo No. 3, Kel. Watang Soreang, Kec. Soreang, Kota
@@ -22,22 +22,24 @@
         <h2
           class="text-lg font-semibold mb-4 border-b-2 w-32 border-dark-green pb-2"
         >
-          Navigation
+          Navigasi
         </h2>
         <ul class="mb-4 flex flex-col gap-2">
           <li>
-            <a href="/" class="hover:text-dark-green">Home</a>
+            <a href="/" class="hover:text-dark-green">Beranda</a>
           </li>
           <li>
-            <a href="/" class="hover:text-dark-green">Information Center</a>
-          </li>
-          <li>
-            <a href="/doctor-schedules" class="hover:text-dark-green"
-              >Doctor's Schedules</a
+            <a href="/our-services" class="hover:text-dark-green"
+              >Pusat Informasi</a
             >
           </li>
           <li>
-            <a href="/about-us" class="hover:text-dark-green">About Us</a>
+            <a href="/doctor-schedules" class="hover:text-dark-green"
+              >Jadwal Dokter</a
+            >
+          </li>
+          <li>
+            <a href="/about-us" class="hover:text-dark-green">Tentang Kami</a>
           </li>
         </ul>
       </div>
@@ -47,17 +49,17 @@
         <h2
           class="text-lg font-semibold mb-4 border-b-2 w-32 border-dark-green pb-2"
         >
-          Contact
+          Kontak
         </h2>
         <ul class="mb-4">
-          <li>Admin Officer:</li>
+          <li>Admin:</li>
           <li class="text-dark-green hover:font-light">
             <a
               href="https://api.whatsapp.com/send/?phone=6285656419510&text&type=phone_number&app_absent=0"
               >+62 856-5641-9510</a
             >
           </li>
-          <li>Email Officer:</li>
+          <li>Email:</li>
           <li class="text-dark-green hover:font-light">
             <a href="pkm.cempae@gmail.com">pkm.cempae@gmail.com</a>
           </li>
@@ -69,7 +71,7 @@
         <h2
           class="text-lg font-semibold mb-4 border-b-2 w-36 border-dark-green pb-2"
         >
-          Social Media
+          Sosial Media
         </h2>
         <ul class="flex gap-5 mb-4">
           <li>

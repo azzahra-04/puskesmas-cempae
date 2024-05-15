@@ -90,7 +90,7 @@
           <div class="flex items-center">
             <a href="/manage-account">
               <img
-                src="https://via.placeholder.com/200"
+                src={$page.data.user.image}
                 alt=""
                 class="w-10 h-10 rounded-full mr-4"
               />

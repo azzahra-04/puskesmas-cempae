@@ -26,6 +26,14 @@
     </div>
   {/if}
 
+  {#if form?.message}
+    <div class="flex items-center p-4 mt-4 text-sm border rounded" role="alert">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      &nbsp;
+      <p class="font-medium">{form.message}</p>
+    </div>
+  {/if}
+
   <img
     src={data.inpatientRoom.image}
     class="w-1/2 rounded mx-auto mt-10"

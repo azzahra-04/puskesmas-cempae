@@ -3,6 +3,7 @@ import { facility } from "$db/collection/facility";
 import { article } from "$db/collection/article";
 import { activity } from "$db/collection/activity";
 import { doctorsSchedule } from "$db/collection/doctorsSchedule";
+import { feedback } from "$db/collection/feedback";
 import { user } from "$db/collection/user";
 import { redirectRoleIsNot } from "$lib/server/guard";
 
@@ -28,5 +29,6 @@ export async function load({ locals }) {
     activitiesCount: activity.count(),
     doctorSchedulesCount: doctorsSchedule.count(),
     usersCount: user.count(),
+    feedbacksCount: feedback.count(),
   };
 }

@@ -12,8 +12,38 @@ export const actions = {
     const username = data.get("username");
     const password = data.get("password");
 
+    if (!username.trim()) {
+      return fail(400, {
+        message: "Username tidak boleh kosong.",
+      });
+    } else if (username.length < 6) {
+      return fail(400, {
+        message: "Username minimal 6 karakter.",
+      });
+    }
+
+    if (!password.trim()) {
+      return fail(400, {
+        message: "Password tidak boleh kosong.",
+      });
+    } else if (password.length < 6) {
+      return fail(400, {
+        message: "Password minimal 6 karakter.",
+      });
+    }
+
     const name = data.get("name");
     const telephoneNumber = data.get("phone");
+    if (
+      !telephoneNumber.length ||
+      telephoneNumber.length < 10 ||
+      telephoneNumber.length > 15
+    ) {
+      return fail(400, {
+        message: "Nomor telepon min. 10-15 karakter.",
+      });
+    }
+
     const email = data.get("email");
     const address = data.get("address");
     const image = data.get("image");

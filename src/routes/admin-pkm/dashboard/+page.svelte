@@ -4,17 +4,17 @@
 </script>
 
 <div class="p-6">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-    <!-- 5 card awal -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <!-- 6 card awal -->
     <div
       class="bg-white border border-dark-green flex flex-row rounded-md p-6 shadow-md shadow-black/5"
     >
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-person-booth fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">
+          <div class="text-sm font-semibold mb-1">
             {#await data.inpatientRoomsCount}
-              loading
+              Loading...
             {:then count}
               {count}
             {:catch error}
@@ -31,9 +31,9 @@
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-house-medical fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">
+          <div class="text-sm font-semibold mb-1">
             {#await data.facilitiesCount}
-              loading
+              Loading...
             {:then count}
               {count}
             {:catch error}
@@ -50,9 +50,9 @@
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-newspaper fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">
+          <div class="text-sm font-semibold mb-1">
             {#await data.articlesCount}
-              loading
+              Loading...
             {:then count}
               {count}
             {:catch error}
@@ -69,9 +69,9 @@
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-hand-holding-medical fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">
+          <div class="text-sm font-semibold mb-1">
             {#await data.activitiesCount}
-              loading
+              Loading...
             {:then count}
               {count}
             {:catch error}
@@ -88,9 +88,9 @@
       <div class="flex items-center mr-4">
         <i class="fa-solid fa-user-doctor fa-2xl mr-4"></i>
         <div class="flex flex-col ml-4">
-          <div class="text-2xl font-semibold mb-1">
+          <div class="text-sm font-semibold mb-1">
             {#await data.doctorSchedulesCount}
-              loading
+              Loading...
             {:then count}
               {count}
             {:catch error}
@@ -101,13 +101,51 @@
         </div>
       </div>
     </div>
+    <div
+      class="bg-white border border-dark-green flex flex-row rounded-md p-6 shadow-md shadow-black/5"
+    >
+      <div class="flex items-center mr-4">
+        <i class="fa-solid fa-users fa-2xl mr-4"></i>
+        <div class="flex flex-col ml-4">
+          <div class="text-sm font-semibold mb-1">
+            {#await data.usersCount}
+              Loading...
+            {:then count}
+              {count}
+            {:catch error}
+              {error.message}
+            {/await}
+          </div>
+          <div class="text-sm">Pengguna</div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-white border border-dark-green flex flex-row rounded-md p-6 shadow-md shadow-black/5"
+    >
+      <div class="flex items-center mr-4">
+        <i class="fa-solid fa-comments fa-2xl mr-4"></i>
+        <div class="flex flex-col ml-4">
+          <div class="text-sm font-semibold mb-1">
+            {#await data.feedbacksCount}
+              Loading...
+            {:then count}
+              {count}
+            {:catch error}
+              {error.message}
+            {/await}
+          </div>
+          <div class="text-sm">Laporan</div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
     <div
       class="bg-white border border-dark-green shadow-md shadow-black/5 p-6 rounded-md"
     >
       <div class="flex justify-between mb-4 items-start">
-        <div class="font-semibold">Daftar Dokter Puskesmas</div>
+        <div class="font-semibold">Dokter Puskesmas</div>
       </div>
       <div>
         <table class="w-full" data-tab-for="order" data-page="active">
@@ -154,7 +192,7 @@
       class="bg-white border border-dark-green shadow-md shadow-black/5 p-6 rounded-md"
     >
       <div class="flex justify-between mb-4 items-start">
-        <div class="font-semibold">Daftar Pengguna</div>
+        <div class="font-semibold">Data Pengguna</div>
       </div>
       <div class="relative w-full mr-2 mb-4">
         <input

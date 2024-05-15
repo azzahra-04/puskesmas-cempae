@@ -16,12 +16,42 @@ export const actions = {
     const data = await request.formData();
     const username = data.get("username");
     const password = data.get("password");
+    const telephoneNumber = data.get("phone");
+
+    if (!username.trim()) {
+      return fail(400, {
+        message: "Username tidak boleh kosong.",
+      });
+    } else if (username.length < 6) {
+      return fail(400, {
+        message: "Username minimal 6 karakter.",
+      });
+    }
+
+    if (
+      !telephoneNumber.length ||
+      telephoneNumber.length < 10 ||
+      telephoneNumber.length > 15
+    ) {
+      return fail(400, {
+        message: "Nomor telepon min. 10-15 karakter.",
+      });
+    }
+
+    if (!password.trim()) {
+      return fail(400, {
+        message: "Password tidak boleh kosong.",
+      });
+    } else if (password.length < 6) {
+      return fail(400, {
+        message: "Password minimal 6 karakter.",
+      });
+    }
 
     const fullName = data.get("full-name");
     const image = data.get("image");
     const gender = data.get("gender");
     const dateOfBirth = data.get("date-of-birth");
-    const telephoneNumber = data.get("phone");
     const email = data.get("email");
     const address = data.get("address");
 
@@ -70,6 +100,6 @@ export const actions = {
       return fail(401);
     }
 
-    redirect(301, "/login");
+    return { success: true };
   },
 };
