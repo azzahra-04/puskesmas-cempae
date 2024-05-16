@@ -97,6 +97,7 @@
         class="border p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green focus:border-transparent"
       />
       <button
+        type="button"
         on:click={handleSearch}
         class="grow bg-green px-6 py-2 rounded-md hover:bg-dark-green"
       >

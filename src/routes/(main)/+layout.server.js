@@ -1,10 +1,8 @@
-import { redirectRoleIsNot } from "$lib/server/guard";
 import { user } from "$db/collection/user";
 import { ObjectId } from "mongodb";
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ locals }) {
-  // redirectRoleIsNot("user", locals.credential, "/login");\
   if (!locals.credential) {
     return {};
   }

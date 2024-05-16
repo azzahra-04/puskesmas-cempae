@@ -85,14 +85,17 @@
         <input
           type="text"
           placeholder="Search..."
-          class="border p-2 rounded-s focus:outline-none sm:mt-0 md:text-sm"
+          class="border p-2 rounded-s focus:outline-none focus:ring-2 focus:ring-dark-green focus:border-transparent sm:mt-0 md:text-sm"
         />
-        <!-- <button
-          on:click={handleSearch}
+        <button
+          type="button"
+          on:click={() => {
+            console.log("searching...");
+          }}
           class="grow px-4 py-2 rounded-e border bg-green hover:bg-dark-green sm:mt-0 md:text-sm"
         >
           <i class="fa-solid fa-magnifying-glass"></i>
-        </button> -->
+        </button>
       </div>
     </div>
   </div>
