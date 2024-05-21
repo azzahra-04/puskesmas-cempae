@@ -82,7 +82,7 @@
             </tr>
           {/each}
         {:else}
-          <p class="m-4">Tidak ada data yang ditemukan</p>
+          <p class="m-4">Data tidak ditemukan</p>
         {/if}
       </tbody>
     </table>

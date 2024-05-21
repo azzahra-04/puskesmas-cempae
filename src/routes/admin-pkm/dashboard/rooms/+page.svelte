@@ -3,6 +3,16 @@
   /** @type {import('./$types').PageServerData} */
   export let data;
 
+  let searchValue = "";
+  let filteredData = [];
+
+  function handleSearch() {
+    let filter = searchValue.toLowerCase();
+    filteredData = data.bookingRooms.filter((bookingRoom) => {
+      return bookingRoom.name.toLowerCase().includes(filter);
+    });
+  }
+
   let openDeleteDialog = false;
   let deleteId = null;
   let deleting = false;
@@ -85,13 +95,12 @@
         <input
           type="text"
           placeholder="Search..."
+          bind:value={searchValue}
           class="border p-2 rounded-s focus:outline-none focus:ring-2 focus:ring-dark-green focus:border-transparent sm:mt-0 md:text-sm"
         />
         <button
           type="button"
-          on:click={() => {
-            console.log("searching...");
-          }}
+          on:click={handleSearch}
           class="grow px-4 py-2 rounded-e border bg-green hover:bg-dark-green sm:mt-0 md:text-sm"
         >
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -113,22 +122,28 @@
         </tr>
       </thead>
       <tbody class="divide-y">
-        {#each data.bookingRooms as { name, complaint, visitDate, status, document }}
+        {#if filteredData.length > 0}
+          {#each filteredData as { name, complaint, visitDate, status, document }}
+            <tr>
+              <td class="px-6 py-4">{name}</td>
+              <td class="px-6 py-4">{visitDate}</td>
+              <td class="px-6 py-4">{complaint}</td>
+              <td class="px-6 py-4">{status}</td>
+              <td class="px-6 py-4">
+                <a
+                  href={document}
+                  target="_blank"
+                  class="py-1.5 px-4 hover:bg-green border rounded"
+                  >Lihat Dokumen</a
+                >
+              </td>
+            </tr>
+          {/each}
+        {:else}
           <tr>
-            <td class="px-6 py-4">{name}</td>
-            <td class="px-6 py-4">{visitDate}</td>
-            <td class="px-6 py-4">{complaint}</td>
-            <td class="px-6 py-4">{status}</td>
-            <td class="px-6 py-4">
-              <a
-                href={document}
-                target="_blank"
-                class="py-1.5 px-4 hover:bg-green border rounded"
-                >Lihat Dokumen</a
-              >
-            </td>
+            <td class="px-6 py-4" colspan="5">Data tidak ditemukan</td>
           </tr>
-        {/each}
+        {/if}
       </tbody>
     </table>
   </div>
