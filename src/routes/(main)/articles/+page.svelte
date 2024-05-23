@@ -3,7 +3,10 @@
   export let data;
 
   let searchValue = "";
-  let filteredArticle = [];
+  let filteredArticle = data.articles;
+
+  let visibleCards = 3;
+  let totalCards = filteredArticle.length;
 
   function handleSearch() {
     let filter = searchValue.toLowerCase();
@@ -12,15 +15,8 @@
     });
   }
 
-  let visibleCards = 3;
-  let totalCards = data.articles.length;
-
   function showMore() {
     visibleCards += 3;
-
-    if (visibleCards > totalCards) {
-      visibleCards = totalCards;
-    }
   }
 </script>
 
@@ -53,35 +49,39 @@
 
   <!-- List Card Articles -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-    {#each (filteredArticle.length > 0 ? filteredArticle : data.articles).slice(0, visibleCards) as { _id: id, title, image, created_at }}
-      <div
-        class="w-full mx-auto rounded-xl overflow-hidden shadow-md mb-4 border border-dark-green"
-      >
-        <img
-          class="object-cover w-full h-48"
-          src={`${image}`}
-          alt={`Gambar Artikel ${id}`}
-        />
+    {#if filteredArticle.length > 0}
+      {#each filteredArticle.slice(0, visibleCards) as { _id: id, title, image, created_at }}
+        <div
+          class="w-full mx-auto rounded-xl overflow-hidden shadow-md mb-4 border border-dark-green"
+        >
+          <img
+            class="object-cover w-full h-48"
+            src={`${image}`}
+            alt={`Gambar Artikel ${id}`}
+          />
 
-        <div class="p-6">
-          <div class="flex items-center justify-between">
-            <span class="text-sm mb-2">{created_at}</span>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <span class="text-sm mb-2">{created_at}</span>
+            </div>
+            <a
+              href="/articles/{id}"
+              class="font-semibold text-xl mb-2 line-clamp-2 hover:underline"
+            >
+              {title}
+            </a>
+            <a href="/articles/{id}" class="text-sm hover:opacity-80"
+              >Selengkapnya <i class="fa-solid fa-arrow-right"></i></a
+            >
           </div>
-          <a
-            href="/articles/{id}"
-            class="font-semibold text-xl mb-2 line-clamp-2 hover:underline"
-          >
-            {title}
-          </a>
-          <a href="/articles/{id}" class="text-sm hover:opacity-80"
-            >Selengkapnya <i class="fa-solid fa-arrow-right"></i></a
-          >
         </div>
-      </div>
-    {/each}
+      {/each}
+    {:else}
+      <p class="text-lg py-4">Artikel tidak ditemukan.</p>
+    {/if}
   </div>
 
-  {#if visibleCards < totalCards}
+  {#if visibleCards < totalCards && filteredArticle.length > 0}
     <button
       on:click={showMore}
       type="button"

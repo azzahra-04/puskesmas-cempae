@@ -1,6 +1,19 @@
 <script>
   /** @type {import('./$types').PageServerData} */
   export let data;
+
+  let searchValue = "";
+  let filteredData = data.users;
+
+  function handleSearch() {
+    let filter = searchValue.toLowerCase();
+    filteredData = data.users.filter((user) => {
+      return user.fullName.toLowerCase().includes(filter);
+    });
+  }
+
+  // Panggil handleSearch setiap kali searchValue berubah
+  $: handleSearch();
 </script>
 
 <div class="p-6">
@@ -198,6 +211,7 @@
         <input
           type="text"
           class="py-2 pr-4 pl-10 w-full outline-none border border-gray-100 rounded-md text-sm"
+          bind:value={searchValue}
           placeholder="Search User..."
         />
         <i
@@ -226,30 +240,36 @@
             </tr>
           </thead>
           <tbody>
-            {#each data.users as user}
+            {#if filteredData.length > 0}
+              {#each filteredData as { image, fullName, telephoneNumber, address }}
+                <tr>
+                  <td class="py-2 px-4 border-b border-b-gray-50">
+                    <div class="flex items-center">
+                      <img
+                        src={image}
+                        alt=""
+                        class="w-8 h-8 rounded-full object-cover block"
+                      />
+                      <p class="text-sm font-medium ml-2">{fullName}</p>
+                    </div>
+                  </td>
+                  <td class="py-2 px-4 border-b border-b-gray-50">
+                    <span class="text-[13px] font-medium"
+                      >{telephoneNumber ? telephoneNumber : "-"}</span
+                    >
+                  </td>
+                  <td class="py-2 px-4 border-b border-b-gray-50">
+                    <span class="text-[13px] font-medium">{address}</span>
+                  </td>
+                </tr>
+              {/each}
+            {:else}
               <tr>
-                <td class="py-2 px-4 border-b border-b-gray-50">
-                  <div class="flex items-center">
-                    <img
-                      src={user.image}
-                      alt=""
-                      class="w-8 h-8 rounded-full object-cover block"
-                    />
-                    <p class="text-sm font-medium ml-2">
-                      {user.fullName}
-                    </p>
-                  </div>
-                </td>
-                <td class="py-2 px-4 border-b border-b-gray-50">
-                  <span class="text-[13px] font-medium"
-                    >{user.telephoneNumber}</span
-                  >
-                </td>
-                <td class="py-2 px-4 border-b border-b-gray-50">
-                  <span class="text-[13px] font-medium">{user.address}</span>
+                <td colspan="4" class="py-2 px-4 text-center">
+                  <p class="text-sm">Tidak ada pengguna yang ditemukan.</p>
                 </td>
               </tr>
-            {/each}
+            {/if}
           </tbody>
         </table>
       </div>

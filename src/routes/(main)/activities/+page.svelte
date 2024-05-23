@@ -3,7 +3,10 @@
   export let data;
 
   let searchValue = "";
-  let filteredActivity = [];
+  let filteredActivity = data.activities;
+
+  let visibleCards = 3;
+  let totalCards = filteredActivity.length;
 
   function handleSearch() {
     let filter = searchValue.toLowerCase();
@@ -12,15 +15,8 @@
     });
   }
 
-  let visibleCards = 3;
-  let totalCards = data.activities.length;
-
   function showMore() {
     visibleCards += 3;
-
-    if (visibleCards > totalCards) {
-      visibleCards = totalCards;
-    }
   }
 </script>
 
@@ -53,34 +49,38 @@
 
   <!-- List Card Activities -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-    {#each (filteredActivity.length > 0 ? filteredActivity : data.activities).slice(0, visibleCards) as { _id: id, title, image, created_at }}
-      <div
-        class="w-full mx-auto rounded-xl overflow-hidden shadow-md mb-4 border border-dark-green"
-      >
-        <img
-          src={image}
-          class="w-full h-48 object-cover object-center shadow-md"
-          alt=""
-        />
+    {#if filteredActivity.length > 0}
+      {#each filteredActivity.slice(0, visibleCards) as { _id: id, title, image, created_at }}
+        <div
+          class="w-full mx-auto rounded-xl overflow-hidden shadow-md mb-4 border border-dark-green"
+        >
+          <img
+            src={image}
+            class="w-full h-48 object-cover object-center shadow-md"
+            alt=""
+          />
 
-        <div class="p-6">
-          <div class="flex items-center justify-between">
-            <span class="text-sm mb-2">{created_at}</span>
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <span class="text-sm mb-2">{created_at}</span>
+            </div>
+            <a
+              href="/activities/{id}"
+              class="font-semibold text-xl mb-2 line-clamp-2 hover:underline"
+              >{title}</a
+            >
+            <a href="/activities/{id}" class="text-sm hover:opacity-80"
+              >Selengkapnya <i class="fa-solid fa-arrow-right"></i></a
+            >
           </div>
-          <a
-            href="/activities/{id}"
-            class="font-semibold text-xl mb-2 line-clamp-2 hover:underline"
-            >{title}</a
-          >
-          <a href="/activities/{id}" class="text-sm hover:opacity-80"
-            >Selengkapnya <i class="fa-solid fa-arrow-right"></i></a
-          >
         </div>
-      </div>
-    {/each}
+      {/each}
+    {:else}
+      <p class="text-lg">Kegiatan tidak ditemukan.</p>
+    {/if}
   </div>
 
-  {#if visibleCards < totalCards}
+  {#if visibleCards < totalCards && filteredActivity.length > 0}
     <button
       on:click={showMore}
       type="button"

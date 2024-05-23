@@ -4,7 +4,7 @@
   export let data;
 
   let searchValue = "";
-  let filteredData = [];
+  let filteredData = data.bookingRooms;
 
   function handleSearch() {
     let filter = searchValue.toLowerCase();

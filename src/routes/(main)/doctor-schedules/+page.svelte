@@ -3,7 +3,10 @@
   export let data;
 
   let searchValue = "";
-  let filteredData = [];
+  let filteredData = data.doctorsSchedules;
+
+  let visibleCards = 3;
+  let totalCards = filteredData.length;
 
   function handleSearch() {
     let filter = searchValue.toLowerCase();
@@ -12,15 +15,8 @@
     });
   }
 
-  let visibleCards = 3;
-  let totalCards = data.doctorsSchedules.length;
-
   function showMore() {
     visibleCards += 3;
-
-    if (visibleCards > totalCards) {
-      visibleCards = totalCards;
-    }
   }
 </script>
 
@@ -106,35 +102,38 @@
     </div>
     <div class="mt-12">
       <ul class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-        {#each (filteredData.length > 0 ? filteredData : data.doctorsSchedules).slice(0, visibleCards) as { _id: id, name, image, specialist, practiceSchedule }}
-          <li>
-            <div class="w-full h-60 sm:h-52 md:h-56">
-              <img
-                src={image}
-                class="w-full h-full object-cover object-center shadow-md rounded-xl border border-dark-green"
-                alt={`Gambar Dokter ${id}`}
-              />
-            </div>
-            <div class="mt-4">
-              <h4 class="text-lg font-semibold">{name}</h4>
-              <p>{specialist}</p>
-              <p>Jadwal Praktek: {practiceSchedule}</p>
-            </div>
-          </li>
-        {/each}
+        {#if filteredData.length > 0}
+          {#each filteredData.slice(0, visibleCards) as { _id: id, name, image, specialist, practiceSchedule }}
+            <li>
+              <div class="w-full h-60 sm:h-52 md:h-56">
+                <img
+                  src={image}
+                  class="w-full h-full object-cover object-center shadow-md rounded-xl border border-dark-green"
+                  alt={`Gambar Dokter ${id}`}
+                />
+              </div>
+              <div class="mt-4">
+                <h4 class="text-lg font-semibold">{name}</h4>
+                <p>{specialist}</p>
+                <p>Jadwal Praktek: {practiceSchedule}</p>
+              </div>
+            </li>
+          {/each}
+        {:else}
+          <p class="text-lg py-4">Data dokter tidak ditemukan.</p>
+        {/if}
       </ul>
+      {#if visibleCards < totalCards && filteredData.length > 0}
+        <button
+          on:click={showMore}
+          type="button"
+          class="bg-green px-6 py-2 m-6 rounded-md flex mx-auto hover:bg-dark-green"
+          >Tampilkan Lebih Banyak
+        </button>
+      {/if}
     </div>
   </div>
 </section>
-
-{#if visibleCards < totalCards}
-  <button
-    on:click={showMore}
-    type="button"
-    class="bg-green px-6 py-2 m-6 rounded-md flex mx-auto hover:bg-dark-green"
-    >Tampilkan Lebih Banyak
-  </button>
-{/if}
 
 <section class="marquee-container bg-green py-6 px-5">
   <span class="marquee-text"
