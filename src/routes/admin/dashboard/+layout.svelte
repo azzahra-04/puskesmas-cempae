@@ -5,7 +5,7 @@
   const subMenuItems = [
     { title: "Beranda", href: "/admin/dashboard" },
     { title: "Kelola Data" },
-    { title: "Data Admin Puskesmas", href: "/admin/dashboard/admin-pkm" },
+    { title: "Data Admin Puskesmas", href: "/admin/dashboard/admin-data" },
     { title: "Data Pengguna", href: "/admin/dashboard/user" },
     { title: "Keluar" },
   ];

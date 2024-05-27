@@ -11,7 +11,7 @@
     { title: "Kegiatan", href: "/admin-pkm/dashboard/activities" },
     { title: "Data Dokter", href: "/admin-pkm/dashboard/doctors-data" },
     { title: "Antrian Online", href: "/admin-pkm/dashboard/online-queue" },
-    { title: "Laporan", href: "/admin-pkm/dashboard/feedbacks" },
+    { title: "Kritik dan Saran", href: "/admin-pkm/dashboard/feedbacks" },
     { title: "Keluar", href: "/logout" },
   ];
 </script>

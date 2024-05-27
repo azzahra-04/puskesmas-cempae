@@ -10,7 +10,7 @@
     "Data Admin Puskesmas": "fa-solid fa-file-shield",
     "Data Pengguna": "fa-solid fa-file-pen",
     "Antrian Online": "fa-solid fa-file-invoice",
-    Laporan: "fa-solid fa-comments",
+    "Kritik dan Saran": "fa-solid fa-comments",
   };
 </script>
 
