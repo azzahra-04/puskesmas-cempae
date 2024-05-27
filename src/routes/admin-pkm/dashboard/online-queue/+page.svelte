@@ -21,7 +21,6 @@
           <th class="py-3 px-6 border">Keluhan</th>
           <th class="py-3 px-6 border">Poli</th>
           <th class="py-3 px-6 border">Tanggal Kunjungan</th>
-          <th class="py-3 px-6 border">Status</th>
           <th class="py-3 px-6 border"></th>
         </tr>
       </thead>
@@ -33,7 +32,6 @@
             </td>
             <td class="px-6 py-4 border truncate w-32">{poli}</td>
             <td class="px-6 py-4 border truncate w-32">{visitDate}</td>
-            <td class="px-6 py-4 border truncate w-32"></td>
             <td class="px-6 py-4 border">
               <button
                 on:click={() => {

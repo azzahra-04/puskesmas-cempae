@@ -80,6 +80,7 @@
               <td class="px-6 py-4">
                 <div class="flex items-center justify-center">
                   <a
+                    data-sveltekit-reload
                     href="/admin-pkm/dashboard/articles/{id}"
                     class="py-2 px-3 mr-4 font-medium hover:bg-dark-green rounded"
                   >
