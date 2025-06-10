@@ -21,7 +21,7 @@
 </script>
 
 <!-- Antrian Online -->
-<section
+<!-- <section
   class="bg-green flex flex-col justify-between py-6 pt-28 lg:flex-row md:gap-10"
 >
   <div class="px-4 my-auto md:px-12">
@@ -71,7 +71,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="py-14" id="doctorSchedules">
   <div class="max-w-screen-xl mx-auto px-4 md:px-8">
