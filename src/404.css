@@ -46,7 +46,7 @@ body {
 
 .circles p {
 	font-size: 240px;
-	color: #fff;
+	color: #fffffa;
 	padding-top: 60px;
 	position: relative;
   z-index: 9;
@@ -138,14 +138,15 @@ body {
 @-webkit-keyframes bigmove {
 	0% { top: 0px; right: 4%; opacity: 0.5; }
 	25% { top: 100px; right: 40%; opacity:0.4; }
-	50% { top: 240px; right: 45%; opacity:0.8; }
+	50% { top: 160px; right: 45%; opacity:0.8; }
 	75% { top: 100px; right: 35%;  opacity:0.6; }
 	100% { top: 0px; right: 4%; opacity: 0.5; }
 }
 @keyframes bigmove {
 	0% { top: 0px; right: 4%; opacity: 0.5; }
 	25% { top: 100px; right: 40%; opacity:0.4; }
-	50% { top: 240px; right: 45%; opacity:0.8; }
+	50% { top: 160px; right: 45%; opacity:0.8; }
 	75% { top: 100px; right: 35%;  opacity:0.6; }
 	100% { top: 0px; right: 4%; opacity: 0.5; }
 }
+
