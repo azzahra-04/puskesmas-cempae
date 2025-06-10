@@ -228,7 +228,9 @@
     </div>
   </button>
 {/if} -->
-
+<script>
+  import "../404.css";
+</script>
 
 <section id="not-found">
   <div id="title">Simple Pure CSS3 &bull; 404 Error Page</div>
