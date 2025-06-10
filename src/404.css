@@ -10,8 +10,8 @@ body {
   background:#48A9E6 !important;
   font-family: 'Raleway', sans-serif !important;
   font-weight:300;
-  margin:0;
-  padding:0;
+  margin:0 !important;
+  padding:0 !important;
 }
 
 #title {
