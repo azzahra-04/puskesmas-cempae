@@ -229,7 +229,7 @@
   </button>
 {/if} -->
 <script>
-  import "../app.css";
+  import "../404.css";
 </script>
 
 <slot />
