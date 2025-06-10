@@ -229,8 +229,10 @@
   </button>
 {/if} -->
 <script>
-  import "../404.css";
+  import "../app.css";
 </script>
+
+<slot />
 
 <section id="not-found">
   <div id="title">Simple Pure CSS3 &bull; 404 Error Page</div>
