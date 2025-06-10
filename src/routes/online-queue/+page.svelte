@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   export let form;
   let open = false;
 
@@ -157,10 +157,10 @@
       class="grow bg-green px-6 py-2 rounded hover:bg-dark-green">Kembali</a
     >
   </form>
-</div>
+</div> -->
 
 <!-- onlineQueue Modal -->
-{#if form?.success && form?.queueNumber && open}
+<!-- {#if form?.success && form?.queueNumber && open}
   <button class="fixed inset-0 w-full h-full bg-black bg-opacity-40">
     <div
       class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg mx-auto px-4"
@@ -227,4 +227,4 @@
       </div>
     </div>
   </button>
-{/if}
+{/if} -->
