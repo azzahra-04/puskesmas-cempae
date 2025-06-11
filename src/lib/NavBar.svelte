@@ -123,7 +123,7 @@
 
 <!-- start: Sidebar -->
 <div
-  class="fixed w-full h-full overflow-y-auto bg-white p-4 z-50 sidebar-menu transition-transform lg:hidden"
+  class="fixed w-full h-full overflow-y-auto bg-white p-4 z-50 sidebar-menu transition-transform lg:hidden"id="nav-mobile"
 >
   <a
     href="/"
