@@ -1,5 +1,5 @@
 <script>
-  import {page} from '$app/stores'
+/** @type {import('./$types').PageLoad} */
 </script>
 
 <section id="not-found">
