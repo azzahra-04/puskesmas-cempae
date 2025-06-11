@@ -1,3 +1,7 @@
+<script>
+  import {page} from '$app/stores'
+</script>
+
 <section id="not-found">
   <div class="circles">
     <p>
