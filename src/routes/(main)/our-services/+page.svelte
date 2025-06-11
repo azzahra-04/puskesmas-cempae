@@ -81,7 +81,7 @@
   </div>
 
   <!-- List Card Room -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+  <!-- <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
     {#each data.inpatientRooms as { _id: id, name, image, totalBed, emptyBed, filledBed }}
       <div class="rounded-lg shadow-xl mx-auto border border-dark-green">
         <img class="p-5" src={image} alt="" />
@@ -117,5 +117,5 @@
         </div>
       </div>
     {/each}
-  </div>
+  </div> -->
 </div>
