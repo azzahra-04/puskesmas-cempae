@@ -79,7 +79,7 @@
 <h1 class="text-2xl py-4 md:text-3xl lg:text-4xl font-bold">
       <i class="fa-solid fa-user-doctor"></i> Dokter Kami
     </h1>
-      <p class="mt-3 px-28">
+      <p class="mt-3 pe-28">
         Tim dokter kami siap memberikan pelayanan kesehatan yang penuh kasih dan
         komprehensif, memastikan kesejahteraan Anda dalam tangan yang terampil.
       </p>
