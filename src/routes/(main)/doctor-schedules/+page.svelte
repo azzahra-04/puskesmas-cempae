@@ -75,7 +75,10 @@
 
 <section class="py-14 pt-28" id="doctorSchedules"> 
   <div class="max-w-screen-xl mx-auto px-4 md:px-8 ">
-    <div class="bg-green justify-between py-6 " id="jadwal-dokter">
+    <div class="bg-green justify-between py-6 px-4 md:px-8" id="jadwal-dokter">
+<h1 class="text-2xl py-4 md:text-3xl lg:text-4xl font-bold">
+      <i class="fa-solid fa-handshake fa-xl"></i> Buat Janji Temu
+    </h1>
       <h2 class="text-2xl py-4 md:text-3xl lg:text-4xl font-bold">
         Dokter Kami
       </h2>
