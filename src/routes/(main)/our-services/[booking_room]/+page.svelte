@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   export let data;
   export let form;
   let open = false;
@@ -108,10 +108,10 @@
       </form>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Success Modals -->
-{#if form?.success && open}
+<!-- {#if form?.success && open}
   <button class="fixed inset-0 w-full h-full bg-black bg-opacity-40">
     <div
       class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg mx-auto px-4"
@@ -126,5 +126,5 @@
         </div>
       </div>
     </div>
-  </button>
+  </button> -->
 {/if}
