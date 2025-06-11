@@ -1,5 +1,5 @@
 <script>
-  import "../../../404.css";
+  import "../../../../404.css";
 </script>
 
 <slot />
