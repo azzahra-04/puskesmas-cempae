@@ -16,7 +16,9 @@ body {
 nav {
     top:0 !important;
 }
-
+#nav-mobile{
+top:0 !important;
+}
 #title {
   text-align:center;
   font-size:40px;
