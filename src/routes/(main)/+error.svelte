@@ -1,7 +1,3 @@
-<script>
-/** @type {import('./$types').PageLoad} */
-</script>
-
 <section id="not-found">
   <div class="circles">
     <p>
