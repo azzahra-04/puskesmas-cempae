@@ -77,11 +77,8 @@
   <div class="max-w-screen-xl mx-auto px-4 md:px-8 ">
     <div class="bg-green justify-between py-6 px-4 md:px-8" id="jadwal-dokter">
 <h1 class="text-2xl py-4 md:text-3xl lg:text-4xl font-bold">
-      <i class="fa-solid fa-handshake fa-xl"></i> Buat Janji Temu
+      <i class="fa-solid fa-user-doctor"></i> Dokter Kami
     </h1>
-      <h2 class="text-2xl py-4 md:text-3xl lg:text-4xl font-bold">
-        Dokter Kami
-      </h2>
       <p class="mt-3">
         Tim dokter kami siap memberikan pelayanan kesehatan yang penuh kasih dan
         komprehensif, memastikan kesejahteraan Anda dalam tangan yang terampil.
