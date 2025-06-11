@@ -67,6 +67,3 @@
 //     return { success: true };
 //   },
 // };
-export const load = () => {
-  return {};
-};
